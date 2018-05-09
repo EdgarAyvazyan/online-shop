@@ -1,0 +1,10 @@
+<html>
+<head>
+    <title>list.am</title>
+</head>
+<body>
+<div>
+    <h1>${valodik}</h1>
+</div>
+</body>
+</html>
