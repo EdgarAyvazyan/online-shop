@@ -1,4 +1,4 @@
-package com.mainserver.online.shop.domain;
+package com.mainserver.online.shop.domain.dto;
 
 public class ListElement {
 

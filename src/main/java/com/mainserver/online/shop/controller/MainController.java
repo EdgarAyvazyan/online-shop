@@ -1,6 +1,6 @@
 package com.mainserver.online.shop.controller;
 
-import com.mainserver.online.shop.domain.ListElement;
+import com.mainserver.online.shop.domain.dto.ListElement;
 import com.mainserver.online.shop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
