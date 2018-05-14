@@ -31,10 +31,13 @@ public class ProductService {
             listElement.setId(product.getId());
             listElement.setName(product.getName());
             listElement.setPrice(product.getPrice());
-            listElement.setUrl("https://s.list.am/r/986/23991986.webp");
+            listElement.setUrl(product.getImages().get(0).getUrl());
 
             listElements.add(listElement);
         }
+
+        session.close();
+
         return listElements;
     }
 }

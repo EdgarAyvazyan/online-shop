@@ -1,12 +1,12 @@
 package com.mainserver.online.shop.domain.entity;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -22,8 +22,10 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-
     private User user;
+
+    @OneToMany(mappedBy = "product")
+    private List<Image> images;
 
     public int getId() {
         return id;
@@ -63,5 +65,13 @@ public class Product {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
     }
 }
