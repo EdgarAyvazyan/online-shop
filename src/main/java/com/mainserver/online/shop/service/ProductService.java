@@ -40,4 +40,11 @@ public class ProductService {
 
         return listElements;
     }
+
+    public Product getProductById(int id) {
+        Session session = sessionFactory.openSession();
+        Product product = session.find(Product.class, id);
+        session.close();
+        return product;
+    }
 }

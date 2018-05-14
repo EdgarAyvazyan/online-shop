@@ -14,13 +14,15 @@
 </head>
 <body>
 <c:forEach items="${products}" var="item">
-    <div style="width: 600px; margin-top: 50px;" class="center">
-        <img src="${item.url}" style="width: 100px; height: 100px; float: left;" />
-        <h4 style="float: left;">${item.name}</h4>
-        <p style="float: right;">${item.price}AMD</p>
+    <a href="/item/${item.id}" >
+        <div style="width: 600px; margin-top: 50px;" class="center">
+            <img src="${item.url}" style="width: 100px; height: 100px; float: left;" />
+            <h4 style="float: left;">${item.name}</h4>
+            <p style="float: right;">${item.price}AMD</p>
+            <div style="clear: both; "></div>
+        </div>
         <div style="clear: both; "></div>
-    </div>
-    <div style="clear: both; "></div>
+    </a>
 </c:forEach>
 </body>
 </html>

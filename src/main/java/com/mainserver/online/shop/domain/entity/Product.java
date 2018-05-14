@@ -24,7 +24,7 @@ public class Product {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     private List<Image> images;
 
     public int getId() {
