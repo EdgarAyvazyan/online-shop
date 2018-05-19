@@ -5,6 +5,11 @@
     <title>list.am</title>
 </head>
 <body>
+
+<form method="post" action="${pageContext.request.contextPath}/logout">
+    <input type="submit" value="Logout">
+</form>
+
 ${product.id}
 ${product.price}
 ${product.name}

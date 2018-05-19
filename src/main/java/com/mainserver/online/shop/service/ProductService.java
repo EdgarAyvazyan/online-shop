@@ -5,6 +5,7 @@ import com.mainserver.online.shop.domain.entity.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,11 +18,15 @@ public class ProductService {
             .configure()
             .buildSessionFactory();
 
-    public List<ListElement> getProductList() {
+    public List<ListElement> getProductList(String keyword) {
         Session session = sessionFactory.openSession();
 
         List<Product> products = session
-                .createQuery("from Product", Product.class)
+                .createQuery(
+                        "select p from Product p where p.name like :keyword",
+                        Product.class
+                )
+                .setParameter("keyword", "%" + keyword + "%")
                 .list();
 
         List<ListElement> listElements = new ArrayList<>();
